@@ -175,7 +175,7 @@ import useFilters from './Filters.hooks';
 // }
 
 const Filters = () => {
-  const { filters, addNewFilter } = useFilters();
+  const { filters, addNewFilter, updateValue } = useFilters();
 
   return (
     <>
@@ -192,7 +192,7 @@ const Filters = () => {
               this.setType(value, id);
             }}
             onValueChange={({ target: { value } }) => {
-              this.setValue(value, id);
+              updateValue(value, id);
             }}
             onOperationChange={({ target: { value } }) => {
               this.setOperation(value, id);
